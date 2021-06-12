@@ -27,8 +27,8 @@
         </nav>
     </div>
     <br>
-    <br>
     @yield('konten')
+    @yield('konten2')
 
 
 

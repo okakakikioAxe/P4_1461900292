@@ -1,8 +1,8 @@
-@extends('template/main0292')
+@extends('template/data0292')
 
-@section('title','home')
+@section('title','data buku')
 
-@section('konten')
+@section('konten2')
     <div class="container">
         <div class="row">
             <div class="col"></div>
@@ -43,8 +43,8 @@
     <table class="table text-center" id="tabel">
         <thead>
             <tr>
-                <th scope="col" style="width:5%;">#</th>
-                <th scope="col" style="width:20%;">Id</th>
+                <th scope="col" style="width:5%;">No</th>
+                <th scope="col" style="width:20%;">ID Buku</th>
                 <th scope="col" style="width:20%;">Judul Buku</th>
                 <th scope="col" style="width:20%;">Tahun Terbit</th>
                 <th scope="col" style="width:15%;">Action</th>
