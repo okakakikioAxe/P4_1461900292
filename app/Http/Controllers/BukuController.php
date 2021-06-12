@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BukuExport;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 
@@ -104,7 +106,11 @@ class BukuController extends Controller
         $buku = Buku::where('id',$data)->orWhere('judul',$data)->get();
         
         return view('dataBuku0292',['data'=> $buku]);
-        
+    }
+
+    public function excel()
+    {  
+        return Excel::download(new BukuExport, 'Data_1461900292.xlsx');
         
     }
 }

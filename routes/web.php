@@ -26,4 +26,5 @@ Route::resource('jenis' , JenisBukuController::class);
 Route::resource('rak'   , RakBukuController::class);
 Route::resource('user'  , UserController::class);
 
-Route::post('buku/search', [BukuController::class , 'find'])->name('buku.search');
+Route::post('buku/search'   , [BukuController::class , 'find'])->name('buku.search');
+Route::post('buku/excel'      , [BukuController::class , 'excel'])->name('buku.excel');

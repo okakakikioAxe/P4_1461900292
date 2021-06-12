@@ -31,6 +31,13 @@
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col">
+                    <form class="btn btn-sm" action="{{ route('buku.excel') }}" method="post">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="btn-submit " >
+                        <a class="btn btn-success" role="button">Export</a>
+                        </button>
+                    </form>
                     <a class="btn btn-primary" href="{{ route('buku.create') }}" role="button">Tambah+</a>
                 </div>
             </div>
