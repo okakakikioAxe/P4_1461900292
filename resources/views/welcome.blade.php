@@ -1,7 +1,10 @@
-@extends('template.main0292')
+@extends('template/main0292')
 
 @section('title','home')
 
 @section('konten')
-    <h1>Home</h1>
+<div class="container">
+    <h2>Home</h2>
+</div>
+
 @endsection
