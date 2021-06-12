@@ -19,7 +19,7 @@ use App\Http\Controllers\DataLengkapController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome0292');
 });
 
 Route::resource('buku'  , BukuController::class);
