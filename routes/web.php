@@ -5,6 +5,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\JenisBukuController;
 use App\Http\Controllers\RakBukuController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DataLengkapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,6 @@ Route::post('rak/excel'         , [RakBukuController::class , 'excel'])->name('r
 
 Route::post('user/search'       , [UserController::class , 'find'])->name('user.search');
 Route::post('user/excel'        , [UserController::class , 'excel'])->name('user.excel');
+
+Route::get('data/index'         , [DataLengkapController::class , 'index'])->name('data.index');
+Route::post('data/search'       , [DataLengkapController::class , 'find'])->name('data.search');

@@ -21,6 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="{{ route('buku.index') }}">Data</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('data.index') }}">Data Lengkap</a>
                 </div>
                 </div>
             </div>
