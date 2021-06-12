@@ -70,7 +70,7 @@ class RakBukuController extends Controller
     public function edit($id)
     {
         $data = RakBuku::where('id',$id)->get();
-        return view ('editJenisBuku0292',['data'=>$data]);
+        return view ('editRakBuku0292',['data'=>$data]);
     }
 
     /**
