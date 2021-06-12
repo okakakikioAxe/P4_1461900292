@@ -59,9 +59,6 @@
                 <td>{{ $buku->tahun_terbit }}</td>
                 <td>
                             <a class="btn btn-sm" href="#" role="button">
-                                <img src="{{ asset('gambar/show.png') }}" alt="lihat">
-                            </a>
-                            <a class="btn btn-sm" href="#" role="button">
                                 <img src="{{ asset('gambar/edit.png') }}" alt="lihat">
                             </a>
                             <form class="btn btn-sm" action="#" method="post">
