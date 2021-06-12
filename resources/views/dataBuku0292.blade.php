@@ -51,11 +51,12 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($data as $buku)
             <tr>
-            <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">1</th>
+                <td>{{ $buku->id }}</td>
+                <td>{{ $buku->judul }}</td>
+                <td>{{ $buku->tahun_terbit }}</td>
                 <td>
                             <a class="btn btn-sm" href="#" role="button">
                                 <img src="{{ asset('gambar/show.png') }}" alt="lihat">
@@ -72,6 +73,7 @@
                             </form>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

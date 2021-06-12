@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Buku;
 
 class BukuController extends Controller
 {
@@ -13,7 +14,8 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $data = Buku::all();
+        return view ('dataBuku0292', ['data' => $data]);
     }
 
     /**
