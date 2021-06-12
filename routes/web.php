@@ -31,3 +31,6 @@ Route::post('buku/excel'      , [BukuController::class , 'excel'])->name('buku.e
 
 Route::post('jenis/search'   , [JenisBukuController::class , 'find'])->name('jenis.search');
 Route::post('jenis/excel'      , [JenisBukuController::class , 'excel'])->name('jenis.excel');
+
+Route::post('rak/search'   , [RakBukuController::class , 'find'])->name('rak.search');
+Route::post('rak/excel'      , [RakBukuController::class , 'excel'])->name('rak.excel');

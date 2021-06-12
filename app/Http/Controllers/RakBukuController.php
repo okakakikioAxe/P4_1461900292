@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
+use App\Exports\RakExport;
+use App\Models\RakBuku;
 
 class RakBukuController extends Controller
 {
@@ -13,7 +16,8 @@ class RakBukuController extends Controller
      */
     public function index()
     {
-        //
+        $data = RakBuku::all();
+        return view ('dataRakBuku0292', ['data' => $data]);
     }
 
     /**
@@ -23,7 +27,7 @@ class RakBukuController extends Controller
      */
     public function create()
     {
-        //
+        return view ('tambahRakBuku0292');
     }
 
     /**
@@ -34,7 +38,16 @@ class RakBukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idBuku = $request->buku;
+        $idJenis = $request->jenis;
+
+        $rak = new RakBuku;
+        $rak->id_buku = $idBuku;
+        $rak->id_jenis_buku = $idJenis;
+        $rak->save();
+        
+        return redirect()->route('rak.index');
+
     }
 
     /**
@@ -56,7 +69,8 @@ class RakBukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = RakBuku::where('id',$id)->get();
+        return view ('editJenisBuku0292',['data'=>$data]);
     }
 
     /**
@@ -68,7 +82,10 @@ class RakBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $idBuku = $request->buku;
+        $idJenis = $request->jenis; 
+        RakBuku::where('id',$id)->update(['id_buku'=>$idBuku, 'id_jenis_buku'=>$idJenis]);
+        return redirect()->route('rak.index');
     }
 
     /**
@@ -79,6 +96,21 @@ class RakBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        RakBuku::where('id',$id)->delete();
+        return redirect()->route('rak.index');
+    }
+
+    public function find(Request $request)
+    {
+        $data = $request->data;
+        $rak = RakBuku::where('id',$data)->get();
+        
+        return view('dataRakBuku0292',['data'=> $rak]);
+    }
+
+    public function excel()
+    {  
+        return Excel::download(new RakExport, 'Data_1461900292.xlsx');
+        
     }
 }

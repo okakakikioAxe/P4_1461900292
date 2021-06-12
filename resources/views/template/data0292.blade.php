@@ -9,7 +9,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="{{ route('buku.index') }}">Buku</a></li>
                 <li><a class="dropdown-item" href="{{ route('jenis.index') }}">Jenis Buku</a></li>
-                <li><a class="dropdown-item" href="#">Rak Buku</a></li>
+                <li><a class="dropdown-item" href="{{ route('rak.index') }}">Rak Buku</a></li>
                 <li><a class="dropdown-item" href="#">User</a></li>
             </ul>
         </div>
