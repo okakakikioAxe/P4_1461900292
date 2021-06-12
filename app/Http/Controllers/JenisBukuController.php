@@ -37,7 +37,7 @@ class JenisBukuController extends Controller
     {
         $jenisBuku = $request->jenis;
 
-        $jenis = new Buku;
+        $jenis = new JenisBuku;
         $jenis->jenis = $jenis;
         $jenis->save();
         
@@ -77,7 +77,7 @@ class JenisBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Buku::where('id',$id)->update(['jenis'=>$request->jenis]);
+        JenisBuku::where('id',$id)->update(['jenis'=>$request->jenis]);
         return redirect()->route('jenis.index');
     }
 
