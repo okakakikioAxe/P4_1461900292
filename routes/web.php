@@ -26,11 +26,14 @@ Route::resource('jenis' , JenisBukuController::class);
 Route::resource('rak'   , RakBukuController::class);
 Route::resource('user'  , UserController::class);
 
-Route::post('buku/search'   , [BukuController::class , 'find'])->name('buku.search');
-Route::post('buku/excel'      , [BukuController::class , 'excel'])->name('buku.excel');
+Route::post('buku/search'       , [BukuController::class , 'find'])->name('buku.search');
+Route::post('buku/excel'        , [BukuController::class , 'excel'])->name('buku.excel');
 
-Route::post('jenis/search'   , [JenisBukuController::class , 'find'])->name('jenis.search');
-Route::post('jenis/excel'      , [JenisBukuController::class , 'excel'])->name('jenis.excel');
+Route::post('jenis/search'      , [JenisBukuController::class , 'find'])->name('jenis.search');
+Route::post('jenis/excel'       , [JenisBukuController::class , 'excel'])->name('jenis.excel');
 
-Route::post('rak/search'   , [RakBukuController::class , 'find'])->name('rak.search');
-Route::post('rak/excel'      , [RakBukuController::class , 'excel'])->name('rak.excel');
+Route::post('rak/search'        , [RakBukuController::class , 'find'])->name('rak.search');
+Route::post('rak/excel'         , [RakBukuController::class , 'excel'])->name('rak.excel');
+
+Route::post('user/search'       , [UserController::class , 'find'])->name('user.search');
+Route::post('user/excel'        , [UserController::class , 'excel'])->name('user.excel');

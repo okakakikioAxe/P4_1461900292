@@ -10,7 +10,7 @@
                 <li><a class="dropdown-item" href="{{ route('buku.index') }}">Buku</a></li>
                 <li><a class="dropdown-item" href="{{ route('jenis.index') }}">Jenis Buku</a></li>
                 <li><a class="dropdown-item" href="{{ route('rak.index') }}">Rak Buku</a></li>
-                <li><a class="dropdown-item" href="#">User</a></li>
+                <li><a class="dropdown-item" href="{{ route('user.index') }}">User</a></li>
             </ul>
         </div>
     </div>
