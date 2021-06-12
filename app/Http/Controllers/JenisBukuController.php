@@ -38,7 +38,7 @@ class JenisBukuController extends Controller
         $jenisBuku = $request->jenis;
 
         $jenis = new JenisBuku;
-        $jenis->jenis = $jenis;
+        $jenis->jenis = $jenisBuku;
         $jenis->save();
         
         return redirect()->route('jenis.index');
