@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\JenisExport;
 use App\Models\JenisBuku;
 use Illuminate\Http\Request;
 
@@ -103,7 +106,7 @@ class JenisBukuController extends Controller
 
     public function excel()
     {  
-        return Excel::download(new BukuExport, 'Data_1461900292.xlsx');
+        return Excel::download(new JenisExport, 'Data_1461900292.xlsx');
         
     }
 }

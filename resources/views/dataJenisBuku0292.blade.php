@@ -31,7 +31,7 @@
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col">
-                    <form class="btn btn-sm" action="{{ route('buku.excel') }}" method="post">
+                    <form class="btn btn-sm" action="{{ route('jenis.excel') }}" method="post">
                         @csrf
                         @method('POST')
                         <button type="submit" class="btn-submit " >
