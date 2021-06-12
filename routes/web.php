@@ -28,3 +28,6 @@ Route::resource('user'  , UserController::class);
 
 Route::post('buku/search'   , [BukuController::class , 'find'])->name('buku.search');
 Route::post('buku/excel'      , [BukuController::class , 'excel'])->name('buku.excel');
+
+Route::post('jenis/search'   , [JenisBukuController::class , 'find'])->name('jenis.search');
+Route::post('jenis/excel'      , [JenisBukuController::class , 'excel'])->name('jenis.excel');

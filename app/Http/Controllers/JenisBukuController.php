@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\JenisBuku;
 use Illuminate\Http\Request;
 
 class JenisBukuController extends Controller
@@ -13,7 +13,8 @@ class JenisBukuController extends Controller
      */
     public function index()
     {
-        //
+        $data = JenisBuku::all();
+        return view ('dataJenisBuku0292', ['data' => $data]);
     }
 
     /**
@@ -23,7 +24,7 @@ class JenisBukuController extends Controller
      */
     public function create()
     {
-        //
+        return view ('tambahJenisBuku0292');
     }
 
     /**
@@ -34,7 +35,14 @@ class JenisBukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jenisBuku = $request->jenis;
+
+        $jenis = new Buku;
+        $jenis->jenis = $jenis;
+        $jenis->save();
+        
+        return redirect()->route('jenis.index');
+
     }
 
     /**
@@ -56,7 +64,8 @@ class JenisBukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = JenisBuku::where('id',$id)->get();
+        return view ('editJenisBuku0292',['data'=>$data]);
     }
 
     /**
@@ -68,7 +77,8 @@ class JenisBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Buku::where('id',$id)->update(['jenis'=>$request->jenis]);
+        return redirect()->route('jenis.index');
     }
 
     /**
@@ -79,6 +89,21 @@ class JenisBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        JenisBuku::where('id',$id)->delete();
+        return redirect()->route('jenis.index');
+    }
+
+    public function find(Request $request)
+    {
+        $data = $request->data;
+        $jenis = JenisBuku::where('id',$data)->orWhere('jenis',$data)->get();
+        
+        return view('dataJenisBuku0292',['data'=> $jenis]);
+    }
+
+    public function excel()
+    {  
+        return Excel::download(new BukuExport, 'Data_1461900292.xlsx');
+        
     }
 }
