@@ -28,7 +28,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="buku" class="form-label">ID buku</label>
-                            <input type="text" class="form-control" id="buku" name="buku" value="{{ $rak->id_buku }}">
+                            <input type="text" class="form-control" id="buku" name="buku" value="{{ $rak->id_jenis_buku }}">
                         </div>
                         <div class="mb-3">
                             <label for="jenis" class="form-label">ID jenis buku</label>

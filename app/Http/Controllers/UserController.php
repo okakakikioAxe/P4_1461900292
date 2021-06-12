@@ -88,8 +88,15 @@ class UserController extends Controller
         $username = $request->username;
         $pw1 = $request->pw1;
         $pw2 = $request->pw2; 
-        RakBuku::where('id',$id)->update(['nama'=>$nama, 'username'=>$username, 'password'=>$pw1]);
-        return redirect()->route('user.index');
+        if($pw1 == $pw2){
+            User::where('id',$id)->update(['nama'=>$nama, 'username'=>$username, 'password'=>$pw1]);
+            return redirect()->route('user.index');
+        }
+        else{
+            return back()->withInput();
+        }
+        
+        
     }
 
     /**
