@@ -67,7 +67,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Buku::where('id',$id)->get();
+        return view ('editBuku0292',['data'=>$data]);
     }
 
     /**
@@ -79,7 +80,10 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $judul = $request->judul;
+        $tahun = $request->tahun;
+        Buku::where('id',$id)->update(['judul'=>$judul, 'tahun_terbit'=>$tahun]);
+        return redirect()->route('buku.index');
     }
 
     /**

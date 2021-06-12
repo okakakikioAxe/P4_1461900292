@@ -59,7 +59,7 @@
                 <td>{{ $buku->judul }}</td>
                 <td>{{ $buku->tahun_terbit }}</td>
                 <td>
-                            <a class="btn btn-sm" href="#" role="button">
+                            <a class="btn btn-sm" href="{{ route('buku.edit', $buku->id) }}" role="button">
                                 <img src="{{ asset('gambar/edit.png') }}" alt="lihat">
                             </a>
                             <form class="btn btn-sm" action="#" method="post">
