@@ -41,3 +41,4 @@ Route::post('user/excel'        , [UserController::class , 'excel'])->name('user
 
 Route::get('data/index'         , [DataLengkapController::class , 'index'])->name('data.index');
 Route::post('data/search'       , [DataLengkapController::class , 'find'])->name('data.search');
+Route::post('data/excel'        , [DataLengkapController::class , 'excel'])->name('data.excel');
