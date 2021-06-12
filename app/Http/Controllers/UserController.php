@@ -43,13 +43,17 @@ class UserController extends Controller
         $pw1 = $request->pw1;
         $pw2 = $request->pw2;
 
-        $user = new User;
-        $user->nama = $nama;
-        $user->password = $pw1;
-        $user->save();
-        
-        return redirect()->route('user.index');
-
+        if($pw1 == $pw2){
+            $user = new User;
+            $user->nama = $nama;
+            $user->username = $username;
+            $user->password = $pw1;
+            $user->save();
+            return redirect()->route('user.index');
+        }
+        else{
+            return back()->withInput();
+        }
     }
 
     /**

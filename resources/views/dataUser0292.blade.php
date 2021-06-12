@@ -24,7 +24,7 @@
                 <div class="col mx-1">
                     <form action="{{ route('user.search') }}" class="d-flex" method="post">
                         @csrf
-                        <input class="form-control me-2" type="text" id="data" name="data" placeholder="isikan id rak" aria-label="Search">
+                        <input class="form-control me-2" type="text" id="data" name="data" placeholder="isikan id user" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
