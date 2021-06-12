@@ -31,7 +31,7 @@
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col">
-                    <a class="btn btn-primary" href="#" role="button">Tambah+</a>
+                    <a class="btn btn-primary" href="{{ route('buku.create') }}" role="button">Tambah+</a>
                 </div>
             </div>
         </div>
@@ -51,9 +51,10 @@
             </tr>
         </thead>
         <tbody>
+        <?php $no = 1; ?>
             @foreach ($data as $buku)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row"><?php echo $no ?></th>
                 <td>{{ $buku->id }}</td>
                 <td>{{ $buku->judul }}</td>
                 <td>{{ $buku->tahun_terbit }}</td>
@@ -70,6 +71,7 @@
                             </form>
                 </td>
             </tr>
+            <?php $no++ ?>
             @endforeach
         </tbody>
     </table>

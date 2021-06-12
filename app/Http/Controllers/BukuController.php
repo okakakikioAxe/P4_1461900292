@@ -25,7 +25,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view ('tambahBuku0292');
     }
 
     /**
@@ -36,7 +36,16 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $judul = $request->judul;
+        $tahun = $request->tahun;
+
+        $buku = new Buku;
+        $buku->judul = $judul;
+        $buku->tahun_terbit = $tahun;
+        $buku->save();
+        
+        return redirect()->route('buku.index');
+
     }
 
     /**
