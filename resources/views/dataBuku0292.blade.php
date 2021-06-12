@@ -22,9 +22,9 @@
         <div class="row">
             <div class="row">
                 <div class="col mx-1">
-                    <form action="#" class="d-flex" method="get">
+                    <form action="{{ route('buku.search') }}" class="d-flex" method="post">
                         @csrf
-                        <input class="form-control me-2" type="search" id="cari" name="cari" placeholder="isikan id / judul" aria-label="Search">
+                        <input class="form-control me-2" type="text" id="data" name="data" placeholder="isikan id / judul" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -62,7 +62,7 @@
                             <a class="btn btn-sm" href="{{ route('buku.edit', $buku->id) }}" role="button">
                                 <img src="{{ asset('gambar/edit.png') }}" alt="lihat">
                             </a>
-                            <form class="btn btn-sm" action="#" method="post">
+                            <form class="btn btn-sm" action="{{ route('buku.destroy', $buku->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn-submit" onclick=" return confirm('apakah anda yakin ingin menghapus data ini?');">

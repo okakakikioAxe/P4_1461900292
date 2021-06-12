@@ -25,3 +25,5 @@ Route::resource('buku'  , BukuController::class);
 Route::resource('jenis' , JenisBukuController::class);
 Route::resource('rak'   , RakBukuController::class);
 Route::resource('user'  , UserController::class);
+
+Route::post('buku/search', [BukuController::class , 'find'])->name('buku.search');

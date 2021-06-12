@@ -94,6 +94,17 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Buku::where('id',$id)->delete();
+        return redirect()->route('buku.index');
+    }
+
+    public function find(Request $request)
+    {
+        $data = $request->data;
+        $buku = Buku::where('id',$data)->orWhere('judul',$data)->get();
+        
+        return view('dataBuku0292',['data'=> $buku]);
+        
+        
     }
 }
